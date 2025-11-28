@@ -1,4 +1,4 @@
-package ru.yandex.practicum.delivery;
+package ru.yandex.practicum.delivery.Parcel;
 
 public abstract class Parcel {
 
@@ -14,18 +14,18 @@ public abstract class Parcel {
         this.weight = weight;
     }
 
-    void packageItem(String description) {
+    public void packageItem(String description) {
         System.out.printf("\nПосылка <<%s>> упакована", description);
     }
 
-    void deliver(String description, String deliveryAddress) {
+    public void deliver(String description, String deliveryAddress) {
         System.out.printf("\nПосылка <<%s>> доставлена по адресу %s",description, deliveryAddress);
         System.out.println("\n" + "---".repeat(10));
     }
 
     abstract int getBasePrice();
 
-    double calculateDeliveryCost() {
+    public double calculateDeliveryCost() {
         return weight * getBasePrice();
     }
 
@@ -37,11 +37,13 @@ public abstract class Parcel {
         return description;
     }
 
-    public int getSendDay() {
-        return sendDay;
-    }
-
-    public int getWeight() {
-        return weight;
+    @Override
+    public String toString() {
+        return "Parcel{" +
+                "description='" + description + '\'' +
+                ", weight=" + weight +
+                ", deliveryAddress='" + deliveryAddress + '\'' +
+                ", sendDay=" + sendDay +
+                '}';
     }
 }
