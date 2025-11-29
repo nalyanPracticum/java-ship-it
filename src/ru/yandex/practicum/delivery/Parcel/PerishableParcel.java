@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class PerishableParcel extends Parcel{
 
-    final static int BASE_PRICE_PERISHABLE = 4;
+    private final static int BASE_PRICE_PERISHABLE = 4;
 
     public int timeToLive;
 
@@ -31,11 +31,11 @@ public class PerishableParcel extends Parcel{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || this.getClass() != o.getClass()) return false;
-        StandardParcel other = (StandardParcel) o;
+        PerishableParcel other = (PerishableParcel) o;
         return Objects.equals(description, other.description) &&
-                (weight == ((StandardParcel) o).weight) &&
-                (Objects.equals(deliveryAddress, ((StandardParcel) o).deliveryAddress)) &&
-                (sendDay == ((StandardParcel) o).sendDay) &&
+                (weight == ((PerishableParcel) o).weight) &&
+                (Objects.equals(deliveryAddress, ((PerishableParcel) o).deliveryAddress)) &&
+                (sendDay == ((PerishableParcel) o).sendDay) &&
                 (timeToLive == ((PerishableParcel) o).timeToLive);
     }
 
@@ -43,5 +43,4 @@ public class PerishableParcel extends Parcel{
     public int hashCode() {
         return Objects.hash(description, weight, deliveryAddress, sendDay, timeToLive);
     }
-
 }

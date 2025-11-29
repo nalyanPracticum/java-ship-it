@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParcelBox<T extends Parcel> {
-    int maxBoxWeight;
-    List<T> parcelBox = new ArrayList<>();
+    public final int maxBoxWeight;
+    public List<T> parcelBox = new ArrayList<>();
 
     public ParcelBox(int maxBoxWeight) {
         this.maxBoxWeight = maxBoxWeight;
-        this.parcelBox = parcelBox;
     }
 
     public boolean addParcel(T parcel) {
@@ -33,6 +32,4 @@ public class ParcelBox<T extends Parcel> {
         }
         return parcelBox;
     }
-
-
 }

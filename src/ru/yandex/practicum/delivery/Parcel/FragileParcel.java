@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class FragileParcel extends Parcel implements Trackable {
 
-    final static int BASE_PRICE_FRAGILE = 3;
+    private final static int BASE_PRICE_FRAGILE = 3;
 
     public FragileParcel(String description, int weight, String deliveryAddress, int sendDay) {
         super(description, weight, deliveryAddress, sendDay);
@@ -17,7 +17,7 @@ public class FragileParcel extends Parcel implements Trackable {
     }
 
     @Override
-    int getBasePrice() {
+    public int getBasePrice() {
         return BASE_PRICE_FRAGILE;
     }
 
@@ -30,11 +30,11 @@ public class FragileParcel extends Parcel implements Trackable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || this.getClass() != o.getClass()) return false;
-        StandardParcel other = (StandardParcel) o;
+        FragileParcel other = (FragileParcel) o;
         return Objects.equals(description, other.description) &&
-                (weight == ((StandardParcel) o).weight) &&
-                (Objects.equals(deliveryAddress, ((StandardParcel) o).deliveryAddress)) &&
-                (sendDay == ((StandardParcel) o).sendDay);
+                (weight == ((FragileParcel) o).weight) &&
+                (Objects.equals(deliveryAddress, ((FragileParcel) o).deliveryAddress)) &&
+                (sendDay == ((FragileParcel) o).sendDay);
     }
 
     @Override

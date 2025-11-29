@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class StandardParcel extends Parcel{
 
-    final static int BASE_PRICE_STANDART = 2;
+    private final static int BASE_PRICE_STANDART = 2;
 
     public StandardParcel(String description, int weight, String deliveryAddress, int sendDay) {
         super(description, weight, deliveryAddress, sendDay);

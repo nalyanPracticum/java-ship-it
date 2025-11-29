@@ -3,9 +3,7 @@ package ru.yandex.practicum;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.yandex.practicum.delivery.Parcel.FragileParcel;
 import ru.yandex.practicum.delivery.Parcel.ParcelBox;
-import ru.yandex.practicum.delivery.Parcel.PerishableParcel;
 import ru.yandex.practicum.delivery.Parcel.StandardParcel;
 
 public class AddParcelTest {
